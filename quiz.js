@@ -96,10 +96,6 @@ const questions = [
 
 
 // 2. start quiz
-function startQuiz(){
-
-}
-
 // 3. cycle through questions randomly
 // 4. keep score of participant
 // 5. countdown time remaining
