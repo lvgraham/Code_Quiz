@@ -1,4 +1,17 @@
-// 1. questions for quiz
+// GIVEN I am taking a code quiz
+// WHEN I click the start button
+// THEN a timer starts and I am presented with a question
+// WHEN I answer a question
+// THEN I am presented with another question
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and score
+
+
+// questions for quiz
 const questions = [
     {
         question: 'Which is NOT a JavaScript data type?',
@@ -92,11 +105,17 @@ const questions = [
     }
 ]
 
+//timer
+let time = 300;
+
+var timer = document.getElementById('timer');
+timer.textContent = time;
+
+function decrementTimer(){
+    time--
+    timer.textContent = time;
+}
+
+setInterval(decrementTimer(), 1000)
 
 
-
-// 2. start quiz
-// 3. cycle through questions randomly
-// 4. keep score of participant
-// 5. countdown time remaining
-// 6. stop quiz & show score when complete (or time lapsed)
