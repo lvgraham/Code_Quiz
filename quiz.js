@@ -8,7 +8,7 @@ const questions = [
             {text: 'object', correct: false},
             {text: 'boolean', correct: false},
         ]
-    }
+    },
     {
         question: 'What types of pop-up boxes are available in JavaScript?',
         answers: [
@@ -17,7 +17,7 @@ const questions = [
             {text: 'alert, notificaton, and prompt', correct: false},
             {text: 'alert, confirm, and variable', correct: false},
         ]
-    }
+    },
     {
         question: 'How can you move an element in lowercase to uppercase from an array?',
         answers: [
@@ -26,7 +26,7 @@ const questions = [
             {text: 'toUpperCase', correct: true},
             {text: 'upperCase', correct: false},
         ]
-    }
+    },
     {
         question: 'Inside which HTML element do we put the JavaScript?',
         answers: [
@@ -35,7 +35,7 @@ const questions = [
             {text: '<src>', correct: false},
             {text: '<script>', correct: true},
         ]
-    }
+    },
     {
         question: 'How would you create an alert that says "Hello World!"?',
         answers: [
@@ -44,7 +44,7 @@ const questions = [
             {text: 'prompt("hello world!")', correct: false},
             {text: 'alertText("hello world!")', correct: false},
         ]
-    }
+    },
     {
         question: 'How do you call a function?',
         answers: [
@@ -53,7 +53,7 @@ const questions = [
             {text: 'function functionName()', correct: false},
             {text: 'call functionName()', correct: false},
         ]
-    }
+    },
     {
         question: 'How does a for loop start?',
         answers: [
@@ -62,7 +62,7 @@ const questions = [
             {text: 'for i=0, i++', correct: false},
             {text: 'for(i=0, i<=5)', correct: false},
         ]
-    }
+    },
     {
         question: 'How do you create an array?',
         answers: [
@@ -71,7 +71,7 @@ const questions = [
             {text: 'var arr[1; 2; 3]', correct: false},
             {text: 'var arr = ("1", "2", "3")', correct: false},
         ]
-    }
+    },
     {
         question: 'What method would you use to find a random number between 0 and 1?',
         answers: [
@@ -80,7 +80,7 @@ const questions = [
             {text: 'Math.random()', correct: true},
             {text: 'Math.floor()', correct: false},
         ]
-    }
+    },
     {
         question: 'Where can you place the JavaScript in the HTML file?',
         answers: [

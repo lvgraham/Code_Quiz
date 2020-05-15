@@ -16,6 +16,13 @@ body {
     background: linear-gradient(143deg, rgba(213,50,224,1) 30%, rgba(217,121,230,1) 72%, rgba(208,162,213,1) 95%);  
 }
 
+.header{
+    width: 800px;
+    max-width: 80%;
+    padding: 10px;
+    color: white
+}
+
 .container{
     width: 800px;
     max-width: 80%;
