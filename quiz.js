@@ -1,18 +1,72 @@
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+
+let shuffledQuestions, currentQuestionIndex;
+let score = ''
+
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion();
+})
+
+function startGame(){
+    console.log('started');
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+    questionContainerElement.classList.remove('hide');
+    setNextQuestion();
+}
+
+function setNextQuestion() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
+}
+
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    })
+}
+
+function resetState(){
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+}
+
+function selectAnswer(e){
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct;
+    if (correct) {
+        score ++
+    }else {
+        score
+    }
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide');
+    } else {
+        startButton.innerText = "restart"
+        startButton.classList.remove('hide');
+    }
+}
 
 
-// questions for quiz
-const quizQuestions = [
+
+const questions = [
     {
         question: 'Which is NOT a JavaScript data type?',
         answers: [
@@ -104,70 +158,3 @@ const quizQuestions = [
         ]
     }
 ]
-
-//start button
-var startBtn = document.getElementById('start-btn');
-//next button
-var nextBtn = document.getElementById('next-btn');
-//question container
-var questionContainer = document.getElementById('question-container');
-//questions element
-var questionEl = document.getElementById('question');
-//answer buttons
-var answerBtnEl = document.getElementById('answer-buttons');
-
-
-
-//timer functions
-document.getElementById('timer').innerHTML =
-  005 + ":" + 00;
-
-function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  //if(m<0){alert('timer completed')}
-  
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  console.log(m)
-  setTimeout(startTimer, 1000);
-}
-
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
-}
-
-
-//start the quiz
-function startQuiz() {
-    startTimer();
-    startBtn.classList.add('hide');
-    questionContainer.classList.remove('hide');
-    nextQuestion();
-} 
-
-//go to next question
-function nextQuestion(){
-    
-}
-
-//show question
-function showQuestion(quizQuestions){
-    questionEl.innerText = quizQuestions.question;
-}
-
-
-
-//onclick events
-startBtn.addEventListener("click", function(){
-    startQuiz();
-});
-
-nextBtn.addEventListener("click", function(){
-    nextQuestion();
-});
