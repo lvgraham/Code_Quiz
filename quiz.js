@@ -105,17 +105,62 @@ const questions = [
     }
 ]
 
-//timer
-let time = 300;
+//start button
+var startBtn = document.getElementById('start-btn');
+//next button
+var nextBtn = document.getElementById('next-btn');
+//question container
+var questionContainer = document.getElementById('question-container');
+//questions element
+var questionEl = document.getElementById('questions');
+//answer buttons
+var answerBtnEl = document.getElementById('answer-buttons');
 
-var timer = document.getElementById('timer');
-timer.textContent = time;
 
-function decrementTimer(){
-    time--
-    timer.textContent = time;
+
+//timer functions
+document.getElementById('timer').innerHTML =
+  005 + ":" + 00;
+
+function startTimer() {
+  var presentTime = document.getElementById('timer').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  //if(m<0){alert('timer completed')}
+  
+  document.getElementById('timer').innerHTML =
+    m + ":" + s;
+  console.log(m)
+  setTimeout(startTimer, 1000);
 }
 
-setInterval(decrementTimer(), 1000)
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
 
 
+//start the quiz
+function startQuiz() {
+    // startTimer();
+    console.log('started');
+    //need to unhide the questions when you select the start button.
+    startBtn.classList.add('hide');
+    questionContainer.classList.remove('hide');
+    nextQuestion();
+}
+
+//go to next question
+function nextQuestion(){
+    
+}
+
+
+
+//onclick events
+startBtn.addEventListener("click", startQuiz());
+
+nextBtn.addEventListener("click", nextQuestion());
