@@ -12,7 +12,7 @@
 
 
 // questions for quiz
-const questions = [
+const quizQuestions = [
     {
         question: 'Which is NOT a JavaScript data type?',
         answers: [
@@ -112,7 +112,7 @@ var nextBtn = document.getElementById('next-btn');
 //question container
 var questionContainer = document.getElementById('question-container');
 //questions element
-var questionEl = document.getElementById('questions');
+var questionEl = document.getElementById('question');
 //answer buttons
 var answerBtnEl = document.getElementById('answer-buttons');
 
@@ -145,22 +145,29 @@ function checkSecond(sec) {
 
 //start the quiz
 function startQuiz() {
-    // startTimer();
-    console.log('started');
-    //need to unhide the questions when you select the start button.
+    startTimer();
     startBtn.classList.add('hide');
     questionContainer.classList.remove('hide');
     nextQuestion();
-}
+} 
 
 //go to next question
 function nextQuestion(){
     
 }
 
+//show question
+function showQuestion(quizQuestions){
+    questionEl.innerText = quizQuestions.question;
+}
+
 
 
 //onclick events
-startBtn.addEventListener("click", startQuiz());
+startBtn.addEventListener("click", function(){
+    startQuiz();
+});
 
-nextBtn.addEventListener("click", nextQuestion());
+nextBtn.addEventListener("click", function(){
+    nextQuestion();
+});
