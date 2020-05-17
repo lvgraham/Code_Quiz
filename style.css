@@ -64,7 +64,7 @@ body {
     display: none;
 }
 
-.restart{
+.results-btn{
     background-color: rgba(213,50,224,1);
     color: white;
     font-weight: bold;

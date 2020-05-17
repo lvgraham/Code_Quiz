@@ -1,8 +1,10 @@
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
+const resultsButton = document.getElementById('results-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+const resultsContainerElement = document.getElementById('results-btn');
 
 let shuffledQuestions, currentQuestionIndex;
 let score = ''
@@ -11,6 +13,11 @@ startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion();
+});
+resultsButton.addEventListener('click',() => {
+    resultsContainerElement.classList.remove('hide');
+    
+    console.log('working');
 })
 
 function startGame(){
@@ -59,11 +66,11 @@ function selectAnswer(e){
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = "RESTART"
-        startButton.classList.add('restart');
-        startButton.classList.remove('hide');
+        resultsButton.classList.remove('hide');
     }
 }
+
+
 
 
 
