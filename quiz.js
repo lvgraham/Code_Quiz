@@ -6,7 +6,7 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 
 // results div
-const results = document.getElementsByClassName('showResults');
+const playerResults = document.getElementsByClassName('results');
 const playerScore = document.getElementById('numOfCorrect');
 const numOfQuestions = document.getElementById('numOfQuestions');
 
@@ -20,9 +20,9 @@ nextButton.addEventListener('click', () => {
 });
 
 resultsButton.addEventListener('click', function showResults(){
-    results.classList.remove('hide');
     numOfQuestions.innerHTML = questions.length;
     playerScore.innerHTML = score;
+    playerResults.classList.remove('hide');
 });
 
 //timer functions
