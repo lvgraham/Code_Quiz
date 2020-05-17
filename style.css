@@ -63,3 +63,9 @@ body {
 .hide{
     display: none;
 }
+
+.restart{
+    background-color: rgba(213,50,224,1);
+    color: white;
+    font-weight: bold;
+}
