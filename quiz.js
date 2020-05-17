@@ -7,18 +7,15 @@ const answerButtonsElement = document.getElementById('answer-buttons');
 const resultsContainerElement = document.getElementById('results-btn');
 
 let shuffledQuestions, currentQuestionIndex;
-let score = ''
+let score = 0;
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion();
 });
-resultsButton.addEventListener('click',() => {
-    resultsContainerElement.classList.remove('hide');
-    
-    console.log('working');
-})
+
+resultsButton.addEventListener('click', showResults());
 
 function startGame(){
     console.log('started');
@@ -60,8 +57,6 @@ function selectAnswer(e){
     const correct = selectedButton.dataset.correct;
     if (correct) {
         score ++
-    }else {
-        score
     }
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide');
@@ -70,10 +65,11 @@ function selectAnswer(e){
     }
 }
 
+function showResults(){
 
+}
 
-
-
+//list of questions
 const questions = [
     {
         question: 'Which is NOT a JavaScript data type?',
