@@ -6,7 +6,7 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 
 // results div
-const playerResults = document.getElementsByClassName('results');
+const playerResults = document.getElementById('results');
 const playerScore = document.getElementById('numOfCorrect');
 const numOfQuestions = document.getElementById('numOfQuestions');
 

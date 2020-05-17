@@ -18,6 +18,7 @@ body {
 }
 
 .header{
+    display: block;
     position: absolute;
     top: 10px;
     width: 800px;
@@ -26,7 +27,6 @@ body {
     background-color: white;
     border-radius: 5px;
     text-align: justify;
-    
 }
 
 h1{
@@ -35,6 +35,7 @@ h1{
 }
 
 .container{
+    display: block;
     width: 800px;
     max-width: 80%;
     background-color: white;
@@ -82,5 +83,8 @@ h1{
 }
 
 .results {
-    display: left;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid palevioletred;
+    margin: 20px;
 }
