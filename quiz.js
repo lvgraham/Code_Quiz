@@ -35,12 +35,18 @@ function startTimer() {
   var m = timeArray[0];
   var s = checkSecond((timeArray[1] - 1));
   if(s==59){m=m-1}
-  //if(m<0){alert('timer completed')}
+  if(m<0){
+    numOfQuestions.innerHTML = questions.length;
+    playerScore.innerHTML = score;
+    playerResults.classList.remove('hide');
+    m = 0;
+    s = 0;
+    }
   
   document.getElementById('timer').innerHTML =
     m + ":" + s;
   console.log(m)
-  setTimeout(startTimer, 1000);
+ setTimeout(startTimer, 1000);
 }
 
 function checkSecond(sec) {
