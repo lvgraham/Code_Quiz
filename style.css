@@ -1,7 +1,7 @@
 *{
-    font-family: 'Hind', 'roboto', sans-serif;
     font-size: 20px;
     color: #2C3E50;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -17,30 +17,39 @@ body {
     background: linear-gradient(143deg, rgba(213,50,224,1) 30%, rgba(217,121,230,1) 72%, rgba(208,162,213,1) 95%);  
 }
 
+.container{
+    display: flex;
+    justify-content: center;
+    
+}
+
 .header{
     display: block;
     position: absolute;
     top: 10px;
     width: 800px;
-    padding: 10px;
+    padding: 20px 50px;
     max-width: 80%;
+    margin-top: 20px;
     background-color: white;
     border-radius: 5px;
     text-align: justify;
 }
 
 h1{
-    font-size: 25px;
+    font-size: 50px;
     text-align: center;
+    font-family: 'Permanent Marker', sans-serif;
 }
 
-.container{
-    display: block;
+.quiz-container{
+    position: absolute;
     width: 800px;
     max-width: 80%;
     background-color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
+    margin-top: 20px;
     box-shadow: 0 0 20px 3px #A08B97;
 }
 

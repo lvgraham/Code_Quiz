@@ -5,43 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Hind&family=Roboto&display=swap" rel="stylesheet">
-    <title>Coding Quiz</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">    `   
+    <title>JavaScript Quiz</title>
 </head>
 <body>
-    <div class="header">
-        <h1>JavaScript Quiz</h1>
-        <p> 
-            You will have 5 minutes to complete the quiz. If you get an answer incorrect, your time will be deducted by 5 seconds. 
-        </p>
-    </div>
-
-    <div class="container">
-        <!-- box where question & answers will display -->
-        <div id="question-container" class="hide">
-            
-            <!--question section-->
-            <div id="question">Question</div>
-            <!--timer section-->
-            <div>Time left = <span id="timer"></span></div>
-            <!--answer section-->
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+    <div class='container'>
+        <div class="header">
+            <h1>JavaScript Quiz</h1>
+            <p> 
+                You will have 5 minutes to complete the quiz. If you get an answer incorrect, your time will be deducted by 5 seconds. 
+            </p>
+        </div>
+    
+        <div class="quiz-container">
+            <!-- box where question & answers will display -->
+            <div id="question-container" class="hide">
+                
+                <!--question section-->
+                <div id="question">Question</div>
+                <!--timer section-->
+                <div>Time left = <span id="timer"></span></div>
+                <!--answer section-->
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
             </div>
+    
+            <!--start & next control buttons-->
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+                <button id="results-btn" class="results-btn btn hide">GET RESULTS</button>
+            </div>
+    
+            <!--results-->
+            <div id = results class="results hide">You got <span id="numOfCorrect"></span> out of <span id=numOfQuestions></span></div>
         </div>
-
-        <!--start & next control buttons-->
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-            <button id="results-btn" class="results-btn btn hide">GET RESULTS</button>
-        </div>
-
-        <!--results-->
-        <div id = results class="results hide">You got <span id="numOfCorrect"></span> out of <span id=numOfQuestions></span></div>
     </div>
+    
 
     <script src="quiz.js"></script>
 </body>
