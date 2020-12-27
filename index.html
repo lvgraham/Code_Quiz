@@ -15,7 +15,7 @@
         <div class="header">
             <h1>JavaScript Quiz</h1>
             <p> 
-                You will have 5 minutes to complete the quiz. If you get an answer incorrect, your time will be deducted by 5 seconds. 
+                You will have 5 minutes to complete the quiz. 
             </p>
         </div>
     
@@ -23,12 +23,14 @@
             <!-- box where question & answers will display -->
             <div id="question-container" class="hide">
                 
+                <!--timer section-->
+                <div class='timer-container'>
+                    <div class='timer'>Time left = <span id="timer"></span></div>
+                </div>
+
                 <!--question section-->
                 <div id="question">Question</div>
-                <!--timer section-->
-                <div class='timer'>
-                    <div>Time left = <span id="timer"></span></div>
-                </div>
+                
                 <!--answer section-->
                 <div id="answer-buttons" class="btn-grid">
                     <button class="btn">Answer 1</button>
@@ -43,10 +45,11 @@
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
                 <button id="results-btn" class="results-btn btn hide">GET RESULTS</button>
+                <button id="restart-btn" class="results-btn btn hide">Restart Quiz</button>
             </div>
     
             <!--results-->
-            <div id = results class="results hide">You got <span id="numOfCorrect"></span> out of <span id=numOfQuestions></span></div>
+            <div id = results class="results hide">You got <span id="numOfCorrect"></span> out of <span id=numOfQuestions></span> correct!</div>
         </div>
     </div>
     

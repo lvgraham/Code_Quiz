@@ -1,9 +1,13 @@
 const startButton = document.getElementById('start-btn');
+const restartButton = document.getElementById('restart-btn')
 const nextButton = document.getElementById('next-btn');
 const resultsButton = document.getElementById('results-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+
+//timer
+const timer = document.getElementById('timer');
 
 // results div
 const playerResults = document.getElementById('results');
@@ -13,46 +17,54 @@ const numOfQuestions = document.getElementById('numOfQuestions');
 let shuffledQuestions, currentQuestionIndex;
 let score = 0;
 
+//starts the game 
 startButton.addEventListener('click', startGame);
+
+//moves to next question
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion();
 });
 
+//shows you your results
 resultsButton.addEventListener('click', function showResults(){
     numOfQuestions.innerHTML = questions.length;
     playerScore.innerHTML = score;
     playerResults.classList.remove('hide');
+    resultsButton.classList.add('hide');
+    restartButton.classList.remove('hide')
+    questionContainerElement.classList.add('hide');
+});
+
+//restart game
+restartButton.addEventListener('click', function restartGame() {
+    restartButton.classList.add('hide');
+    playerResults.classList.add('hide');
+    startGame();
 });
 
 //timer functions
-document.getElementById('timer').innerHTML =
-  005 + ":" + 00;
+setInterval(startTimer, 1000)
+const startingMinutes = 5;
+let time = startingMinutes * 60
 
 function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  if(m<0){
-    numOfQuestions.innerHTML = questions.length;
-    playerScore.innerHTML = score;
-    playerResults.classList.remove('hide');
-    m = 0;
-    s = 0;
-    }
-  
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  console.log(m)
- setTimeout(startTimer, 1000);
-}
+    let minutes = Math.floor(time/60);
+    let seconds = time % 60;
+    
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    timer.innerHTML =  `${minutes}:${seconds}`;
+    
+    time--;
 
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
+    if(time <= 0) {
+        clearInterval(time = 0)
+        numOfQuestions.innerHTML = questions.length;
+        playerScore.innerHTML = score;
+        playerResults.classList.remove('hide');
+        restartButton.classList.remove('hide');
+        questionContainerElement.classList.add('hide');
+    }
 }
 
 //start quiz function
