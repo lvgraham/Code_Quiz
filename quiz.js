@@ -6,9 +6,6 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 
-//timer
-const timer = document.getElementById('timer');
-
 // results div
 const playerResults = document.getElementById('results');
 const playerScore = document.getElementById('numOfCorrect');
@@ -40,10 +37,13 @@ resultsButton.addEventListener('click', function showResults(){
 restartButton.addEventListener('click', function restartGame() {
     restartButton.classList.add('hide');
     playerResults.classList.add('hide');
+    clearInterval(time = 300);
+    score = 0;
     startGame();
 });
 
 //timer functions
+
 setInterval(startTimer, 1000)
 const startingMinutes = 5;
 let time = startingMinutes * 60
