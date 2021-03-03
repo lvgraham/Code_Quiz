@@ -17,7 +17,6 @@ body {
 .container{
     display: flex;
     justify-content: center;
-    align-content: space-around;
 }
 
 .header{
@@ -30,7 +29,7 @@ body {
     margin-top: 20px;
     background-color: white;
     border-radius: 5px;
-    text-align: justify;
+    text-align: center;
 }
 
 h1{
@@ -45,9 +44,9 @@ h1{
     max-width: 80%;
     background-color: white;
     border-radius: 5px;
-    padding: 40px;
-    margin-bottom: 20px;
+    padding: 20px 40px;
     box-shadow: 0 0 20px 3px #A08B97;
+    top: 300px;
 }
 
 #question{
