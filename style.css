@@ -85,10 +85,16 @@ h1{
     border: 1px dotted #A08B97;
 }
 
+.btn:active, .btn:focus{
+    background-color: rgba(213,50,224,1);
+    color: white;
+}
+
 .start-btn, .next-btn{
     padding: 10px 20px;
     margin: 10px;
 }
+
 
 .controls{
     display: flex;
