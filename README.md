@@ -13,5 +13,5 @@ SO THAT I can reinforce key ideas to ensure understanding
 
 You are able to see the deployed application [here](https://lvgraham.github.io/Code_Quiz/). 
 
-![photo of code quiz](code-quiz.png)
+![photo of code quiz](./code-quiz.png)
 
